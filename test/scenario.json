@@ -1,0 +1,12 @@
+{"timeout_s": 300, "settle_s": 4, "wifi": true, "sd": true,
+ "forbid": ["E \\(\\d+\\) dd\\."],
+ "steps": [
+   {"expect_console": "dd.main output", "timeout_s": 60},
+   {"expect_console": "Wi-Fi up: open http", "timeout_s": 120},
+   {"expect_console": "dd.stream serving on port 80", "timeout_s": 30},
+   {"wait": 3}, {"screenshot": "glass"},
+   {"button": "right", "hold_ms": 600}, {"button": "down", "hold_ms": 400},
+   {"button": "top", "hold_ms": 120},
+   {"wait": 2}, {"screenshot": "glass_after_move"},
+   {"tap": [205, 300]}, {"wait": 2}, {"screenshot": "glass_after_tap"}
+ ]}

@@ -68,7 +68,7 @@ endif()
 # hash like "0d14d62-dirty" - and the launcher prints whatever is here under
 # the name on the pill. Bare, so `-DPROJECT_VER=...` still overrides it.
 if(NOT DEFINED PROJECT_VER)
-    set(PROJECT_VER "01.00.00")
+    set(PROJECT_VER "01.00.01")
 endif()
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)

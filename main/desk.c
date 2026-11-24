@@ -318,18 +318,18 @@ static void button(gfx_surf_t *s, gfx_rect_t r, const char *label, bool on)
     gfx_atext(s, tx, r.y + (r.h - f->line_h) / 2, f, label, on ? C_INK : C_TEXT, r.w - 16);
 }
 
-/** @brief The launcher's look: a disc with two letters, as kodeOS shows an app. */
+/** @brief The launcher's look: a disc, as kodeOS shows an app, with a pictogram on it. */
 static void icon_art(gfx_surf_t *s, int id, gfx_rect_t r)
 {
     static const uint16_t BG[W_COUNT] = {
         C_BLUE, C_TEXT, C_YELLOW, C_DIM,
     };
-    static const char *const MONO[W_COUNT] = { "FI", "SY", "NO", "DI" };
+    static const aa_icon_t *const ICON[W_COUNT] = { &icon_files, &icon_system, &icon_notes, &icon_display };
     const int rad = r.w / 2;
     gfx_disc(s, r.x + rad, r.y + rad, rad, BG[id], 255);
     const uint16_t ink = (W_FILES == id) ? C_TEXT : C_INK;
-    const int tw = gfx_atext_w(&font_bold, MONO[id]);
-    gfx_atext(s, r.x + rad - tw / 2, r.y + rad - font_bold.line_h / 2, &font_bold, MONO[id], ink, 0);
+    const aa_icon_t *ic = ICON[id];
+    gfx_icon(s, r.x + rad - ic->w / 2, r.y + rad - ic->h / 2, ic, ink);
 }
 
 static void paint_icons(gfx_surf_t *s)

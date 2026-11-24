@@ -85,7 +85,7 @@ The board resets into kodeOS, installs the app and starts it. It stays in Apps.
 
 ## Fonts
 
-`main/fonts_aa.c` is Outfit (SIL Open Font License 1.1, `tools/fonts/OFL-Outfit.txt`), rasterised by `tools/mkfont_ttf.py`. `main/font8x16.h` is Terminus (SIL OFL 1.1), made by `tools/mkfont.py`.
+`main/fonts_aa.c` is Outfit (SIL Open Font License 1.1, `tools/fonts/OFL-Outfit.txt`), rasterised by `tools/mkfont_ttf.py`. `main/font8x16.h` is Terminus (SIL OFL 1.1), made by `tools/mkfont.py`. The icons in `main/icons_aa.c` are drawn by `tools/mkicons.py`.
 
 ## Licence
 

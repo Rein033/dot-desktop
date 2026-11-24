@@ -13,6 +13,7 @@
 #include <stdint.h>
 
 #include "fonts_aa.h"
+#include "icons_aa.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -102,6 +103,9 @@ int gfx_atext(gfx_surf_t *s, int x, int y, const aa_font_t *f, const char *t, ui
 
 /** @brief Width in pixels of @p t in @p f. */
 int gfx_atext_w(const aa_font_t *f, const char *t);
+
+/** @brief An icon inked in @p c with its top-left at (x, y). */
+void gfx_icon(gfx_surf_t *s, int x, int y, const aa_icon_t *ic, uint16_t c);
 
 /** @brief A pill: a rectangle with fully round ends. */
 void gfx_pill(gfx_surf_t *s, gfx_rect_t r, uint16_t c);

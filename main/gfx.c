@@ -333,6 +333,13 @@ static void aglyph(gfx_surf_t *s, int px, int py, const aa_font_t *f, const aa_g
     }
 }
 
+void gfx_icon(gfx_surf_t *s, int x, int y, const aa_icon_t *ic, uint16_t c)
+{
+    const aa_glyph_t g = { 0, ic->w, ic->w, ic->h, 0, 0 };
+    const aa_font_t f = { ic->bits, &g, ic->h, ic->h };
+    aglyph(s, x, y, &f, &g, c);
+}
+
 int gfx_atext_w(const aa_font_t *f, const char *t)
 {
     int w = 0;
